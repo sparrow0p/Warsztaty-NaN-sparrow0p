@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://df4ubqj0qnibv"]
 
-[ext_resource type="Script" uid="uid://bp1vdh1dqpry" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://bp1vdh1dqpry" path="res://scripts/characters/player.gd" id="1_3vyb7"]
 [ext_resource type="Texture2D" uid="uid://cxylvlnctai7l" path="res://graphics/madeline_sprite_sheet.png" id="2_g2els"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kb0ko"]
 radius = 2.0
 height = 10.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6eyoc"]
+atlas = ExtResource("2_g2els")
+region = Rect2(352, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bj30b"]
 atlas = ExtResource("2_g2els")
@@ -95,56 +99,16 @@ region = Rect2(320, 64, 32, 32)
 atlas = ExtResource("2_g2els")
 region = Rect2(352, 64, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4ni07"]
-atlas = ExtResource("2_g2els")
-region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l71n6"]
-atlas = ExtResource("2_g2els")
-region = Rect2(32, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ke2ow"]
-atlas = ExtResource("2_g2els")
-region = Rect2(64, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ujl30"]
-atlas = ExtResource("2_g2els")
-region = Rect2(96, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_31cv2"]
-atlas = ExtResource("2_g2els")
-region = Rect2(128, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pf23h"]
-atlas = ExtResource("2_g2els")
-region = Rect2(160, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dt7fs"]
-atlas = ExtResource("2_g2els")
-region = Rect2(192, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wqfne"]
-atlas = ExtResource("2_g2els")
-region = Rect2(224, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wnwbv"]
-atlas = ExtResource("2_g2els")
-region = Rect2(256, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gl8cc"]
-atlas = ExtResource("2_g2els")
-region = Rect2(288, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_487ah"]
-atlas = ExtResource("2_g2els")
-region = Rect2(320, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_md1ol"]
-atlas = ExtResource("2_g2els")
-region = Rect2(352, 32, 32, 32)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_1rxyu"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6eyoc")
+}],
+"loop": 1,
+"name": &"dead",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bj30b")
@@ -223,52 +187,13 @@ animations = [{
 "texture": SubResource("AtlasTexture_a38lo")
 }],
 "loop": 1,
-"name": &"run",
+"name": &"move",
 "speed": 12.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4ni07")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l71n6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ke2ow")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ujl30")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_31cv2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pf23h")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dt7fs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wqfne")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wnwbv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gl8cc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_487ah")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_md1ol")
-}],
-"loop": 1,
-"name": &"walk",
-"speed": 8.0
 }]
 
-[node name="Player" type="CharacterBody2D" unique_id=170683396]
+[node name="Player" type="CharacterBody2D" unique_id=922815388]
+collision_layer = 2
+collision_mask = 40
 motion_mode = 1
 script = ExtResource("1_3vyb7")
 metadata/_edit_group_ = true
@@ -281,6 +206,7 @@ shape = SubResource("CapsuleShape2D_kb0ko")
 texture_filter = 1
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_1rxyu")
+animation = &"idle"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1456394548]

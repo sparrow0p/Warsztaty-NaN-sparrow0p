@@ -1,0 +1,5 @@
+Ćwiczenie - "Custom Areas":
+Stwórz skrypt attack_area, która rozszerza klasę Area2D
+Daj mu class_name AttackArea
+Dodaj do niego @export vars: "damage", "kb_speed", "kb_time"
+W state_machine_character w funkcji _on_hit(area) zobacz, czy dana wykryta area jest typu AttackArea (jeśli nie to return)

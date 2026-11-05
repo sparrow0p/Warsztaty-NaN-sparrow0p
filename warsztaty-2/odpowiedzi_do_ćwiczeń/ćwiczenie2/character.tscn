@@ -191,5 +191,5 @@ shape = SubResource("CapsuleShape2D_wqdkt")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=413682454]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_vyfj6")
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.5431214

@@ -1,8 +1,7 @@
 extends CharacterBody2D
 
 
-@export_range(1, 300, 1, "suffix:px/s") var walk_speed: float = 90
-@export_range(1, 300, 1, "suffix:px/s") var run_speed: float = 150
+@export_range(1, 300, 1, "suffix:px/s") var speed: float = 150
 @export_range(1, 3000, 1, "suffix:px/s^2") var acceleration: float = 1700
 @export_range(1, 3000, 1, "suffix:px/s^2") var deceleration: float = 1800
 
@@ -19,15 +18,11 @@ func _physics_process(delta: float) -> void:
 
 
 func move(delta: float) -> void:
-	direction = Input.get_vector("a", "d", "w", "s")
+	direction = Input.get_vector("left", "right", "up", "down")
 	
 	if direction:
-		if Input.is_action_pressed("shift"):
-			velocity = velocity.move_toward(direction * run_speed, acceleration * delta)
-			sprite.animation = "run"
-		else:
-			velocity = velocity.move_toward(direction * walk_speed, acceleration * delta)
-			sprite.animation = "walk"
+		velocity = velocity.move_toward(direction * speed, acceleration * delta)
+		sprite.animation = "run"
 		
 		if direction.x:
 			sprite.flip_h = direction.x < 0.0
