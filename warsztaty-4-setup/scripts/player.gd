@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name PlayerBody2D
 
 
 @export_range(1, 300, 1, "suffix:px/s") var walk_speed: float = 90

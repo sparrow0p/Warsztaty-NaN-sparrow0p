@@ -284,4 +284,4 @@ sprite_frames = SubResource("SpriteFrames_1rxyu")
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1456394548]
-zoom = Vector2(3.5, 3.5)
+zoom = Vector2(3.2, 3.2)

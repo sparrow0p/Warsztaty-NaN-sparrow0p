@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b3jvofn3dwkx4"]
 
-[ext_resource type="Script" uid="uid://bao6ciu7el6ua" path="res://scripts/character.gd" id="1_81wgo"]
+[ext_resource type="Script" uid="uid://bao6ciu7el6ua" path="res://scripts/enemy.gd" id="1_81wgo"]
 [ext_resource type="Texture2D" uid="uid://br74n3re2qaa5" path="res://graphics/badeline_sprite_sheet.png" id="1_he50v"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wqdkt"]
@@ -179,7 +179,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="Character" type="CharacterBody2D" unique_id=1737988841]
+[node name="Enemy" type="CharacterBody2D" unique_id=1737988841]
 collision_layer = 0
 script = ExtResource("1_81wgo")
 metadata/_edit_group_ = true
